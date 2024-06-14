@@ -1,0 +1,249 @@
+@prefix : <http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/> .
+
+<http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17> rdf:type owl:Ontology ;
+                                                                          owl:imports <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/age
+:age rdf:type owl:ObjectProperty ;
+     rdfs:domain :WITNESS ;
+     rdfs:range [ rdf:type owl:Restriction ;
+                  owl:onProperty owl:topDataProperty ;
+                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:onDataRange xsd:int
+                ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/altitude
+:altitude rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/contact_info
+:contact_info rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :WITNESS ;
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty owl:topDataProperty ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange rdf:langString
+                         ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/gender
+:gender rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :WITNESS ;
+        rdfs:range [ rdf:type owl:Restriction ;
+                     owl:onProperty owl:topDataProperty ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:boolean
+                   ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_color
+:has_color rdf:type owl:ObjectProperty ;
+           rdfs:domain :UFO ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty owl:topDataProperty ;
+                        owl:allValuesFrom xsd:string
+                      ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_description
+:has_description rdf:type owl:ObjectProperty ;
+                 rdfs:domain :SIGHTING ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty owl:topDataProperty ;
+                              owl:allValuesFrom rdf:langString
+                            ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_investigation
+:has_investigation rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_witness .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_location
+:has_location rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :SIGHTING ;
+              rdfs:range :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_shape
+:has_shape rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :UFO ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty owl:topDataProperty ;
+                        owl:someValuesFrom xsd:string
+                      ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_size
+:has_size rdf:type owl:ObjectProperty ;
+          rdfs:domain :UFO ;
+          rdfs:range [ rdf:type owl:Restriction ;
+                       owl:onProperty owl:topDataProperty ;
+                       owl:someValuesFrom xsd:float
+                     ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/has_witness
+:has_witness rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :SIGHTING ;
+             rdfs:range :WITNESS .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/name
+:name rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdfs:domain :WITNESS ;
+      rdfs:range [ rdf:type owl:Restriction ;
+                   owl:onProperty owl:topDataProperty ;
+                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                   owl:onDataRange rdf:PlainLiteral
+                 ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/speed
+:speed rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdfs:domain :UFO ;
+       rdfs:range [ rdf:type owl:Restriction ;
+                    owl:onProperty owl:topDataProperty ;
+                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:float
+                  ] .
+
+
+###  http://xmlns.com/foaf/0.1/fundedBy
+<http://xmlns.com/foaf/0.1/fundedBy> rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/AGENCY
+:AGENCY rdf:type owl:Class ;
+        rdfs:subClassOf :INVESTIGATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/ALTITUDE
+:ALTITUDE rdf:type owl:Class ;
+          rdfs:subClassOf :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/CITY
+:CITY rdf:type owl:Class ;
+      rdfs:subClassOf :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/CLASSES_UFO_PROJECT
+:CLASSES_UFO_PROJECT rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/COLOR
+:COLOR rdf:type owl:Class ;
+       rdfs:subClassOf :UFO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/COORDINATES
+:COORDINATES rdf:type owl:Class ;
+             rdfs:subClassOf :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/COUNTRY
+:COUNTRY rdf:type owl:Class ;
+         rdfs:subClassOf :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/DESCRIPTION
+:DESCRIPTION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/DURATION
+:DURATION rdf:type owl:Class ;
+          rdfs:subClassOf :SIGHTING .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/FINDINGS
+:FINDINGS rdf:type owl:Class ;
+          rdfs:subClassOf :INVESTIGATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/INVESTIGATION
+:INVESTIGATION rdf:type owl:Class ;
+               rdfs:subClassOf :SIGHTING .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/INVESTIGATION_DATE
+:INVESTIGATION_DATE rdf:type owl:Class ;
+                    rdfs:subClassOf :INVESTIGATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/LOCATION
+:LOCATION rdf:type owl:Class ;
+          rdfs:subClassOf :SIGHTING .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/SHAPE
+:SHAPE rdf:type owl:Class ;
+       rdfs:subClassOf :UFO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/SIGHTING
+:SIGHTING rdf:type owl:Class ;
+          rdfs:subClassOf :CLASSES_UFO_PROJECT .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/SIGHTING_DATE
+:SIGHTING_DATE rdf:type owl:Class ;
+               rdfs:subClassOf :SIGHTING .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/SIZE
+:SIZE rdf:type owl:Class ;
+      rdfs:subClassOf :UFO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/SPEED
+:SPEED rdf:type owl:Class ;
+       rdfs:subClassOf :UFO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/STATE_REGION
+:STATE_REGION rdf:type owl:Class ;
+              rdfs:subClassOf :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/TIME
+:TIME rdf:type owl:Class ;
+      rdfs:subClassOf :SIGHTING .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/UFO
+:UFO rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-17/WITNESS
+:WITNESS rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Class
+rdfs:Class rdfs:subClassOf <http://xmlns.com/foaf/0.1/OnlineAccount> .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
