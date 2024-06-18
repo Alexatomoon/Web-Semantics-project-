@@ -27,8 +27,8 @@
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDate
 :hasDate rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf owl:topObjectProperty ;
-         rdfs:domain :UFO ;
-         rdfs:range :DATE .
+         rdfs:domain :REPORTED ,
+                     :UFO .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDescription
@@ -39,26 +39,13 @@
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDuration
 :hasDuration rdf:type owl:ObjectProperty ;
-             rdfs:domain :UFO ;
-             rdfs:range :ENCOUNTER_LENGTH .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasLatitude
-:hasLatitude rdf:type owl:ObjectProperty ;
-             rdfs:domain :LOCATION ;
-             rdfs:range :LATITUDE .
+             rdfs:domain :UFO .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasLocation
 :hasLocation rdf:type owl:ObjectProperty ;
              rdfs:domain :UFO ;
              rdfs:range :LOCATION .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasLongitude
-:hasLongitude rdf:type owl:ObjectProperty ;
-              rdfs:domain :LOCATION ;
-              rdfs:range :LONGITUDE .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasObserver
@@ -79,13 +66,49 @@
            rdfs:range :STATE .
 
 
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasShape
+:hasShape rdf:type owl:ObjectProperty ;
+          rdfs:domain :UFO ;
+          rdfs:range :SHAPE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#wasReported
+:wasReported rdf:type owl:ObjectProperty ;
+             rdfs:domain :UFO ;
+             rdfs:range :REPORTED .
+
+
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDate_Time
+:hasDate_Time rdf:type owl:DatatypeProperty ;
+              rdfs:domain :REPORTED ,
+                          :UFO ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasEncounter_length
+:hasEncounter_length rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :UFO ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasLatitude
+:hasLatitude rdf:type owl:DatatypeProperty ;
+             rdfs:domain :LOCATION ;
+             rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasLongitude
+:hasLongitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain :LOCATION ;
+              rdfs:range xsd:float .
+
+
 ###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:domain :DATE ;
-                    rdfs:range xsd:dateTime .
+owl:topDataProperty rdf:type owl:FunctionalProperty .
 
 
 #################################################################
@@ -106,36 +129,16 @@ owl:topDataProperty rdfs:domain :DATE ;
 :COUNTRY rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#DATE
-:DATE rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#DESCRIPTION
 :DESCRIPTION rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#DOCUMANTED
-:DOCUMANTED rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#ENCOUNTER_LENGTH
-:ENCOUNTER_LENGTH rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#EXPLANATION
 :EXPLANATION rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#LATITUDE
-:LATITUDE rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#LOCATION
 :LOCATION rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#LONGITUDE
-:LONGITUDE rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#OBSERVER
@@ -156,10 +159,6 @@ owl:topDataProperty rdfs:domain :DATE ;
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#STATE
 :STATE rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#TIME
-:TIME rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#TOWN_VILLAGE
