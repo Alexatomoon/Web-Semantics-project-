@@ -1,0 +1,282 @@
+@prefix : <http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasCity
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :LOCATION ;
+         rdfs:range :CITY .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:domain :LOCATION ;
+            rdfs:range :COUNTRY .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasDescription
+:hasDescription rdf:type owl:ObjectProperty ;
+                rdfs:domain :UFO ;
+                rdfs:range :DESCRIPTION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasDuration
+:hasDuration rdf:type owl:ObjectProperty ;
+             rdfs:domain :UFO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain :UFO ;
+             rdfs:range :LOCATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasObserver
+:hasObserver rdf:type owl:ObjectProperty ;
+             rdfs:domain :UFO ;
+             rdfs:range :OBSERVER .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasOccupation
+:hasOccupation rdf:type owl:ObjectProperty ;
+               rdfs:domain :OBSERVER ;
+               rdfs:range :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasRegion
+:hasRegion rdf:type owl:ObjectProperty ;
+           rdfs:domain :LOCATION ;
+           rdfs:range :STATE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasShape
+:hasShape rdf:type owl:ObjectProperty ;
+          rdfs:domain :UFO ;
+          rdfs:range :SHAPE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/wasReported
+:wasReported rdf:type owl:ObjectProperty ;
+             rdfs:domain :UFO ;
+             rdfs:range :REPORTED .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDate
+<http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasDate> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:domain :REPORTED ,
+                                                                                             :UFO ;
+                                                                                 rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasTime
+<http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18#hasTime> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:domain :REPORTED ,
+                                                                                             :UFO ;
+                                                                                 rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasEncounter_length
+:hasEncounter_length rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :UFO ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasLatitude
+:hasLatitude rdf:type owl:DatatypeProperty ;
+             rdfs:domain :LOCATION ;
+             rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/hasLongitude
+:hasLongitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain :LOCATION ;
+              rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/CreativeWork
+<http://schema.org/CreativeWork> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://xmlns.com/foaf/0.1/OnlineAccount> .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/AREA
+:AREA rdf:type owl:Class ;
+      owl:equivalentClass :STATE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/CITY
+:CITY rdf:type owl:Class ;
+      owl:equivalentClass :TOWN_VILLAGE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/COUNTRY
+:COUNTRY rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/DESCRIPTION
+:DESCRIPTION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/EXPLANATION
+:EXPLANATION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/LOCATION
+:LOCATION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/OBSERVER
+:OBSERVER rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/OCCUPATION
+:OCCUPATION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/REPORTED
+:REPORTED rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/SHAPE
+:SHAPE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/STATE
+:STATE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/TOWN_VILLAGE
+:TOWN_VILLAGE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/UFO
+:UFO rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/OnlineAccount
+<http://xmlns.com/foaf/0.1/OnlineAccount> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Air_Traffic_Control
+:Air_Traffic_Control rdf:type owl:NamedIndividual ,
+                              :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Air_Traffic_Control_employee
+:Air_Traffic_Control_employee rdf:type owl:NamedIndividual ,
+                                       :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Amateur_astronomer
+:Amateur_astronomer rdf:type owl:NamedIndividual ,
+                             :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Ex-RAF
+:Ex-RAF rdf:type owl:NamedIndividual ,
+                 :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Ex-RN_Cdr
+:Ex-RN_Cdr rdf:type owl:NamedIndividual ,
+                    :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Ex-pilot
+:Ex-pilot rdf:type owl:NamedIndividual ,
+                   :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Ex-police
+:Ex-police rdf:type owl:NamedIndividual ,
+                    :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Ex-test_engineer_for_Hawker_Siddley
+:Ex-test_engineer_for_Hawker_Siddley rdf:type owl:NamedIndividual ,
+                                              :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Former_Air_Traffic_Controller
+:Former_Air_Traffic_Controller rdf:type owl:NamedIndividual ,
+                                        :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Journalist
+:Journalist rdf:type owl:NamedIndividual ,
+                     :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/MoD_Guard_Service
+:MoD_Guard_Service rdf:type owl:NamedIndividual ,
+                            :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Part-Time_Pilot
+:Part-Time_Pilot rdf:type owl:NamedIndividual ,
+                          :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Pilot
+:Pilot rdf:type owl:NamedIndividual ,
+                :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Police_Officer
+:Police_Officer rdf:type owl:NamedIndividual ,
+                         :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Police_Sgt
+:Police_Sgt rdf:type owl:NamedIndividual ,
+                     :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Professional_Photographer
+:Professional_Photographer rdf:type owl:NamedIndividual ,
+                                    :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/RN_Air_Traffic_Control
+:RN_Air_Traffic_Control rdf:type owl:NamedIndividual ,
+                                 :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Retired_RAF
+:Retired_RAF rdf:type owl:NamedIndividual ,
+                      :OCCUPATION .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2024/5/untitled-ontology-18/Retired_merchant_seaman
+:Retired_merchant_seaman rdf:type owl:NamedIndividual ,
+                                  :OCCUPATION .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
